@@ -31,4 +31,9 @@ public class UsuarioController {
     public List<Usuario> getAll() {
         return service.getAll();
     }
+
+    @PostMapping()
+    public Usuario insert(@RequestBody Usuario usuario) {
+        return service.insert(usuario);
+    }
 }
