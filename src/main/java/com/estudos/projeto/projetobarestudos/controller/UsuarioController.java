@@ -36,4 +36,11 @@ public class UsuarioController {
     public Usuario insert(@RequestBody Usuario usuario) {
         return service.insert(usuario);
     }
+
+    
+    @PutMapping()
+    public Usuario update(@RequestBody Usuario usuario) {
+        service.insert(usuario);
+        return usuario;
+    }
 }
