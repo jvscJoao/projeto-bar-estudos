@@ -22,8 +22,13 @@ public class ProdutoController {
     private ProdutoService service;
 
     @PostMapping
-    public @ResponseBody Produto insert(@RequestBody Produto produto) {
+    public Produto insert(@RequestBody Produto produto) {
         return service.insert(produto);
+    }
+
+    @GetMapping
+    public List<Produto> getAll() {
+        return service.getAll();
     }
     
 }

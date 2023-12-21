@@ -1,8 +1,9 @@
 package com.estudos.projeto.projetobarestudos.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.estudos.projeto.projetobarestudos.Repositories.ProdutoRepository;
 import com.estudos.projeto.projetobarestudos.domain.Produto.Produto;
@@ -15,5 +16,9 @@ public class ProdutoService {
 
     public Produto insert(Produto produto) {
         return repository.save(produto);
+    }
+
+    public List<Produto> getAll() {
+        return repository.findAll();
     }
 }
