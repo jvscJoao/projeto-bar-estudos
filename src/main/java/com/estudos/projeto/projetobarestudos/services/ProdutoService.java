@@ -21,4 +21,8 @@ public class ProdutoService {
     public List<Produto> getAll() {
         return repository.findAll();
     }
+
+    public Produto update(Produto produto) {
+        return repository.save(produto);
+    }
 }
