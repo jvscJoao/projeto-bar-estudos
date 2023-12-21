@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.estudos.projeto.projetobarestudos.Repositories.UsuarioRepository;
 import com.estudos.projeto.projetobarestudos.domain.Usuario.Usuario;
@@ -15,7 +16,7 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository repository;
 
-    public Usuario insert(Usuario usuario) {
+    public @ResponseBody Usuario insert(Usuario usuario) {
         return repository.save(usuario);
     }
 
