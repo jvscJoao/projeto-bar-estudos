@@ -25,4 +25,9 @@ public class ProdutoService {
     public Produto update(Produto produto) {
         return repository.save(produto);
     }
+
+    public void delete(int id) {
+        repository.deleteById(id);
+    }
+
 }
