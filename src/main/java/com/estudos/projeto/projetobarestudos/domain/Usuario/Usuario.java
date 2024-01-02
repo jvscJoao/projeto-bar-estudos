@@ -1,5 +1,8 @@
 package com.estudos.projeto.projetobarestudos.domain.Usuario;
 
+import com.estudos.projeto.projetobarestudos.dto.UsuarioDTO;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -24,10 +27,19 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
+    @Column(unique = true)
     private String cpf;
     private String password;
     private boolean situacao;
     @Enumerated(EnumType.STRING)
     private PerfilUsuario cargo;
+
+    public Usuario(UsuarioDTO dto) {
+        this.nome = dto.nome();
+        this.cpf = dto.cpf();
+        this.password = dto.password();
+        this.situacao = dto.situacao();
+        this.cargo = dto.cargo();
+    }
     
 }
