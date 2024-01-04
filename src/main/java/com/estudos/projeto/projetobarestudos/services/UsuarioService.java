@@ -48,10 +48,7 @@ public class UsuarioService {
     @Transactional
     public Usuario updateById(int id, UsuarioDTO usuario) {
         Usuario user = getById(id);
-        user.setNome(usuario.nome());
-        user.setCpf(usuario.cpf());
-        user.setPassword(usuario.password());
-        user.setSituacao(usuario.situacao());
+        user.DTOtoObject(usuario);
         return user;
     }
 }

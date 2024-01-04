@@ -41,5 +41,13 @@ public class Usuario {
         this.situacao = dto.situacao();
         this.cargo = dto.cargo();
     }
+
+    public void DTOtoObject(UsuarioDTO dto) {
+        this.nome = dto.nome();
+        this.cpf = dto.cpf();
+        this.password = dto.password();
+        this.situacao = dto.situacao();
+        this.cargo = dto.cargo();
+    }
     
 }

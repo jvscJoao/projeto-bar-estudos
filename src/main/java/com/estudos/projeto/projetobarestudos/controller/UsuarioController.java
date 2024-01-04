@@ -2,6 +2,7 @@ package com.estudos.projeto.projetobarestudos.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,13 +31,15 @@ public class UsuarioController {
     }
 
     @PostMapping()
-    public Usuario insert(@RequestBody @Valid UsuarioDTO usuario) {
-        return service.insert(usuario);
+    public ResponseEntity<Usuario> insert(@RequestBody @Valid UsuarioDTO usuario) {
+        Usuario result = service.insert(usuario);
+        return ResponseEntity.status(HttpStatus.CREATED).body(result);
     }
     
     @PutMapping("/{id}")
-    public Usuario update(@PathVariable int id, @RequestBody UsuarioDTO dto) {
-        return service.updateById(id, dto);
+    public ResponseEntity<Usuario> update(@PathVariable int id, @RequestBody UsuarioDTO dto) {
+        Usuario result = service.updateById(id, dto);
+        return ResponseEntity.ok().body(result);
     }
 
     @DeleteMapping("/{id}")
