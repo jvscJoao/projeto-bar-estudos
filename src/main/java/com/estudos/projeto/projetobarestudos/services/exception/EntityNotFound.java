@@ -7,5 +7,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class EntityNotFound extends RuntimeException {
 
-    private String messagem;
+    private String mensagem;
 }
